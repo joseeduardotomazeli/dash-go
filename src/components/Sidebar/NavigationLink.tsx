@@ -6,12 +6,12 @@ import {
   LinkProps as ChakraLinkProps,
 } from '@chakra-ui/react';
 
-interface NavLinkProps extends ChakraLinkProps {
+interface NavigationLinkProps extends ChakraLinkProps {
   icon: ElementType;
   children: string;
 }
 
-function NavLink(props: NavLinkProps) {
+function NavigationLink(props: NavigationLinkProps) {
   const { icon, children, ...restProps } = props;
 
   return (
@@ -24,4 +24,4 @@ function NavLink(props: NavLinkProps) {
   );
 }
 
-export default NavLink;
+export default NavigationLink;

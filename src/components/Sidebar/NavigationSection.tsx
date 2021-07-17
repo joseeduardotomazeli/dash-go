@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import { Box, Stack, Text } from '@chakra-ui/react';
 
-interface NavSectionProps {
+interface NavigationSectionProps {
   title: string;
   children: ReactNode;
 }
 
-function NavSection(props: NavSectionProps) {
+function NavigationSection(props: NavigationSectionProps) {
   const { title, children } = props;
 
   return (
@@ -22,4 +22,4 @@ function NavSection(props: NavSectionProps) {
   );
 }
 
-export default NavSection;
+export default NavigationSection;

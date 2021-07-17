@@ -1,15 +1,20 @@
-import { Flex, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, IconButton, Icon, useBreakpointValue } from '@chakra-ui/react';
+import { RiMenuLine } from 'react-icons/ri';
 
 import Logo from './Logo';
 import Search from './Search';
 import Notifications from './Notifications';
 import Profile from './Profile';
 
+import useSidebarDrawer from '../../hooks/useSidebarDrawer';
+
 function Header() {
   const isLargeDevice = useBreakpointValue({
     base: false,
     lg: true,
   });
+
+  const { onOpen } = useSidebarDrawer();
 
   return (
     <Flex
@@ -22,6 +27,17 @@ function Header() {
       maxWidth={1480}
       height={20}
     >
+      {!isLargeDevice && (
+        <IconButton
+          aria-label="Open navigation"
+          icon={<Icon as={RiMenuLine} />}
+          variant="unstyled"
+          marginRight={2}
+          fontSize={24}
+          onClick={onOpen}
+        />
+      )}
+
       <Logo />
 
       {isLargeDevice && <Search />}
