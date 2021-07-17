@@ -13,13 +13,23 @@ function Navigation() {
   return (
     <Stack spacing={12} align="flex-start">
       <NavigationSection title="GERAL">
-        <NavigationLink icon={RiDashboardLine}>Dashboard</NavigationLink>
-        <NavigationLink icon={RiContactsLine}>Usuários</NavigationLink>
+        <NavigationLink icon={RiDashboardLine} href="/dashboard">
+          Dashboard
+        </NavigationLink>
+
+        <NavigationLink icon={RiContactsLine} href="/users">
+          Usuários
+        </NavigationLink>
       </NavigationSection>
 
       <NavigationSection title="AUTOMAÇÃO">
-        <NavigationLink icon={RiInputMethodLine}>Formulários</NavigationLink>
-        <NavigationLink icon={RiGitMergeLine}>Automação</NavigationLink>
+        <NavigationLink icon={RiInputMethodLine} href="/forms">
+          Formulários
+        </NavigationLink>
+
+        <NavigationLink icon={RiGitMergeLine} href="/automation">
+          Automação
+        </NavigationLink>
       </NavigationSection>
     </Stack>
   );

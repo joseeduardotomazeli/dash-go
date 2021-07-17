@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   Box,
   Flex,
@@ -40,12 +41,12 @@ function CreateUser() {
           <Divider marginY={6} borderColor="gray.700" />
 
           <VStack spacing={8}>
-            <SimpleGrid minChildWidth={240} padding={[6, 8]} width="100%">
+            <SimpleGrid minChildWidth={240} spacing={[6, 8]} width="100%">
               <Input label="Nome completo" name="name" type="text" />
               <Input label="E-mail" name="e-mail" type="email" />
             </SimpleGrid>
 
-            <SimpleGrid minChildWidth={240} padding={[6, 8]} width="100%">
+            <SimpleGrid minChildWidth={240} spacing={[6, 8]} width="100%">
               <Input label="Senha" name="password" type="password" />
               <Input
                 label="Confirmar senha"
@@ -57,7 +58,10 @@ function CreateUser() {
 
           <Flex justify="flex-end" marginTop={8}>
             <HStack spacing={4}>
-              <Button colorScheme="whiteAlpha">Cancelar</Button>
+              <Link href="/users" passHref>
+                <Button colorScheme="whiteAlpha">Cancelar</Button>
+              </Link>
+
               <Button colorScheme="pink">Salvar</Button>
             </HStack>
           </Flex>
