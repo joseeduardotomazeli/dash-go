@@ -11,7 +11,7 @@ interface InputProps extends ChakraInputProps {
 }
 
 function Input(props: InputProps) {
-  const { label, name, ...rest } = props;
+  const { label, name, ...restProps } = props;
 
   return (
     <FormControl>
@@ -25,7 +25,7 @@ function Input(props: InputProps) {
         backgroundColor="gray.900"
         focusBorderColor="pink.500"
         _hover={{ backgroundColor: 'gray.900' }}
-        {...rest}
+        {...restProps}
       />
     </FormControl>
   );
