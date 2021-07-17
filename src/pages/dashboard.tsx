@@ -80,7 +80,7 @@ function Dashboard() {
 
         <SimpleGrid minChildWidth={320} flex={1} gap={4}>
           <Box
-            padding={8}
+            padding={[6, 8]}
             paddingBottom={4}
             borderRadius={8}
             backgroundColor="gray.800"
@@ -93,7 +93,7 @@ function Dashboard() {
           </Box>
 
           <Box
-            padding={8}
+            padding={[6, 8]}
             paddingBottom={4}
             borderRadius={8}
             backgroundColor="gray.800"
