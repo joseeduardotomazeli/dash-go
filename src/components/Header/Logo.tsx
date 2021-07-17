@@ -5,7 +5,7 @@ function Logo() {
     <Text
       as="h1"
       width={64}
-      fontSize="3xl"
+      fontSize={['2xl', '3xl']}
       fontWeight="bold"
       letterSpacing="tight"
     >

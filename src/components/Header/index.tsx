@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, useBreakpointValue } from '@chakra-ui/react';
 
 import Logo from './Logo';
 import Search from './Search';
@@ -6,6 +6,11 @@ import Notifications from './Notifications';
 import Profile from './Profile';
 
 function Header() {
+  const isLargeDevice = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Flex
       as="header"
@@ -19,11 +24,11 @@ function Header() {
     >
       <Logo />
 
-      <Search />
+      {isLargeDevice && <Search />}
 
       <Flex align="center" marginLeft="auto">
         <Notifications />
-        <Profile />
+        <Profile showUserInformation={isLargeDevice} />
       </Flex>
     </Flex>
   );
