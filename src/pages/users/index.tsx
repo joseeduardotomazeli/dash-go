@@ -3,6 +3,7 @@ import {
   Flex,
   Heading,
   Button,
+  IconButton,
   Icon,
   Table,
   Thead,
@@ -12,6 +13,7 @@ import {
   Td,
   Text,
   Checkbox,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { RiAddLine, RiPencilLine } from 'react-icons/ri';
 
@@ -20,6 +22,11 @@ import Sidebar from '../../components/Sidebar';
 import Pagination from '../../components/Pagination';
 
 function UserList() {
+  const isLargeDevice = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Box>
       <Header />
@@ -53,42 +60,57 @@ function UserList() {
           <Table colorScheme="whiteAlpha">
             <Thead>
               <Tr>
-                <Th paddingX={6} width={8} color="gray.300">
+                <Th paddingX={[4, 4, 6]} width={8} color="gray.300">
                   <Checkbox colorScheme="pink" />
                 </Th>
 
                 <Th>Usuário</Th>
-                <Th>Data cadastro</Th>
+                {isLargeDevice && <Th>Data cadastro</Th>}
                 <Th width={8} />
               </Tr>
             </Thead>
 
             <Tbody>
-              <Tr>
-                <Td paddingX={6}>
+              <Tr textOverflow="ellipsis">
+                <Td paddingX={[4, 4, 6]}>
                   <Checkbox colorScheme="pink" />
                 </Td>
 
                 <Td>
                   <Box>
                     <Text fontWeight="bold">José Eduardo Tomazeli</Text>
-                    <Text color="gray.300" fontSize="small">
-                      joseeduardo.tomazeli@outlook.com
-                    </Text>
+
+                    {isLargeDevice && (
+                      <Text color="gray.300" fontSize="small">
+                        joseeduardo.tomazeli@outlook.com
+                      </Text>
+                    )}
                   </Box>
                 </Td>
 
-                <Td>14 de Junho, 2021</Td>
+                {isLargeDevice && <Td>14 de Junho, 2021</Td>}
+
                 <Td>
-                  <Button
-                    as="a"
-                    size="sm"
-                    colorScheme="purple"
-                    leftIcon={<Icon as={RiPencilLine} fontSize={16} />}
-                    fontSize="small"
-                  >
-                    Editar
-                  </Button>
+                  {isLargeDevice ? (
+                    <Button
+                      as="a"
+                      size="sm"
+                      colorScheme="purple"
+                      leftIcon={<Icon as={RiPencilLine} fontSize={16} />}
+                      fontSize="small"
+                    >
+                      Editar
+                    </Button>
+                  ) : (
+                    <IconButton
+                      as="a"
+                      aria-label="Editar usuário"
+                      size="sm"
+                      colorScheme="purple"
+                      icon={<Icon as={RiPencilLine} />}
+                      fontSize={16}
+                    />
+                  )}
                 </Td>
               </Tr>
             </Tbody>

@@ -27,7 +27,12 @@ function CreateUser() {
       >
         <Sidebar />
 
-        <Box flex={1} padding={8} borderRadius={8} backgroundColor="gray.800">
+        <Box
+          flex={1}
+          padding={[6, 8]}
+          borderRadius={8}
+          backgroundColor="gray.800"
+        >
           <Heading size="lg" fontWeight="normal">
             Criar usuário
           </Heading>
@@ -35,12 +40,12 @@ function CreateUser() {
           <Divider marginY={6} borderColor="gray.700" />
 
           <VStack spacing={8}>
-            <SimpleGrid minChildWidth={240} spacing={8} width="100%">
+            <SimpleGrid minChildWidth={240} padding={[6, 8]} width="100%">
               <Input label="Nome completo" name="name" type="text" />
               <Input label="E-mail" name="e-mail" type="email" />
             </SimpleGrid>
 
-            <SimpleGrid minChildWidth={240} spacing={8} width="100%">
+            <SimpleGrid minChildWidth={240} padding={[6, 8]} width="100%">
               <Input label="Senha" name="password" type="password" />
               <Input
                 label="Confirmar senha"

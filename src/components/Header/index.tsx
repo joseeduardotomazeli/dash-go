@@ -29,7 +29,7 @@ function Header() {
     >
       {!isLargeDevice && (
         <IconButton
-          aria-label="Open navigation"
+          aria-label="Abrir navegação"
           icon={<Icon as={RiMenuLine} />}
           variant="unstyled"
           marginRight={2}
