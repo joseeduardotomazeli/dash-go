@@ -12,8 +12,11 @@ type SignInFormData = {
 
 function SignIn() {
   const schema = yup.object().shape({
-    email: yup.string().email('E-mail inválido').required('E-mail obrigatório'),
-    password: yup.string().required('Senha obrigatória'),
+    email: yup
+      .string()
+      .email('E-mail inválido.')
+      .required('E-mail obrigatório.'),
+    password: yup.string().required('Senha obrigatória.'),
   });
 
   const { register, handleSubmit, formState } = useForm({
@@ -45,7 +48,7 @@ function SignIn() {
             name="email"
             type="email"
             errors={errors}
-            {...register('email', { required: 'E-mail obrigatório' })}
+            {...register('email')}
           />
 
           <Input
@@ -53,7 +56,7 @@ function SignIn() {
             name="password"
             type="password"
             errors={errors}
-            {...register('password', { required: 'Senha obrigatória' })}
+            {...register('password')}
           />
         </Stack>
 
