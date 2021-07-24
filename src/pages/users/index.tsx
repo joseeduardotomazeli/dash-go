@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import {
   Box,
   Flex,
   Heading,
+  Link,
   Button,
   IconButton,
   Icon,
@@ -25,6 +26,8 @@ import Sidebar from '../../components/Sidebar';
 import Pagination from '../../components/Pagination';
 
 import useUsers from '../../services/hooks/useUsers';
+import client from '../../services/queryClient';
+import api from '../../services/api';
 
 function UserList() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,6 +38,17 @@ function UserList() {
     base: false,
     lg: true,
   });
+
+  async function handleUserPrefetch(userId: string) {
+    await client.prefetchQuery(
+      ['user', userId],
+      async () => {
+        const response = await api.get(`users/${userId}`);
+        return response.data;
+      },
+      { staleTime: 5 * 1000 }
+    );
+  }
 
   return (
     <Box>
@@ -58,7 +72,7 @@ function UserList() {
               )}
             </Heading>
 
-            <Link href="/users/create" passHref>
+            <NextLink href="/users/create" passHref>
               <Button
                 as="a"
                 size="sm"
@@ -68,7 +82,7 @@ function UserList() {
               >
                 Novo usuário
               </Button>
-            </Link>
+            </NextLink>
           </Flex>
 
           {isLoading ? (
@@ -104,7 +118,12 @@ function UserList() {
 
                         <Td>
                           <Box>
-                            <Text fontWeight="bold">{user.name}</Text>
+                            <Link
+                              color="purple.400"
+                              onMouseEnter={() => handleUserPrefetch(user.id)}
+                            >
+                              <Text fontWeight="bold">{user.name}</Text>
+                            </Link>
 
                             {isLargeDevice && (
                               <Text color="gray.300" fontSize="small">

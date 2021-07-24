@@ -6,12 +6,11 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import SidebarDrawerProvider from '../contexts/SidebarDrawerProvider';
 
 import mirageServer from '../services/mirage';
+import client from '../services/queryClient';
 
 import theme from '../styles/theme';
 
 if (process.env.NODE_ENV === 'development') mirageServer();
-
-const client = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
