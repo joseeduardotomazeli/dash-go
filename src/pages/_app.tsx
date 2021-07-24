@@ -11,9 +11,9 @@ import theme from '../styles/theme';
 
 if (process.env.NODE_ENV === 'development') mirageServer();
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const client = new QueryClient();
+const client = new QueryClient();
 
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={client}>

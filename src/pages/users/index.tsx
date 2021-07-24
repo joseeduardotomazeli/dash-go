@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import {
   Box,
@@ -26,7 +27,9 @@ import Pagination from '../../components/Pagination';
 import useUsers from '../../services/hooks/useUsers';
 
 function UserList() {
-  const { data, isLoading, isFetching, error } = useUsers();
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const { data, isLoading, isFetching, error } = useUsers(currentPage);
 
   const isLargeDevice = useBreakpointValue({
     base: false,
@@ -92,7 +95,7 @@ function UserList() {
                 </Thead>
 
                 <Tbody>
-                  {data.map((user) => {
+                  {data.users.map((user) => {
                     return (
                       <Tr key={user.id}>
                         <Td paddingX={[4, 4, 6]}>
@@ -143,7 +146,11 @@ function UserList() {
                 </Tbody>
               </Table>
 
-              <Pagination />
+              <Pagination
+                currentPage={currentPage}
+                totalRegisters={data.totalCount}
+                onPageChange={setCurrentPage}
+              />
             </>
           )}
         </Box>

@@ -2,11 +2,12 @@ import { Button } from '@chakra-ui/react';
 
 interface PaginationItemProps {
   isCurrent?: boolean;
-  children: string;
+  number: number;
+  onPageChange: (page: number) => void;
 }
 
 function PaginationItem(props: PaginationItemProps) {
-  const { isCurrent, children } = props;
+  const { isCurrent, number, onPageChange } = props;
 
   if (isCurrent)
     return (
@@ -18,7 +19,7 @@ function PaginationItem(props: PaginationItemProps) {
         disabled
         _disabled={{ bgColor: 'pink.500', cursor: 'default' }}
       >
-        {children}
+        {number}
       </Button>
     );
 
@@ -29,8 +30,9 @@ function PaginationItem(props: PaginationItemProps) {
       backgroundColor="gray.700"
       fontSize="xs"
       _hover={{ bgColor: 'gray.500' }}
+      onClick={() => onPageChange(number)}
     >
-      {children}
+      {number}
     </Button>
   );
 }
