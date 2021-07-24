@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import { QueryClientProvider, QueryClient } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 import SidebarDrawerProvider from '../contexts/SidebarDrawerProvider';
 
@@ -19,6 +20,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <SidebarDrawerProvider>
           <Component {...pageProps} />
         </SidebarDrawerProvider>
+
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </ChakraProvider>
   );
