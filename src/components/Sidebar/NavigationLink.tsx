@@ -21,6 +21,7 @@ function NavigationLink(props: NavigationLinkProps) {
     <ActiveLink href={href} passHref>
       <ChakraLink display="flex" align="center" {...restProps}>
         <Icon as={icon} fontSize={20} />
+
         <Text ml={4} fontWeight="medium">
           {children}
         </Text>

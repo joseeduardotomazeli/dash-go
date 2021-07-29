@@ -64,7 +64,7 @@ function UserList() {
         <Sidebar />
 
         <Box flex={1} padding={8} borderRadius={8} backgroundColor="gray.800">
-          <Flex marginBottom={8} justify="space-between" align="center">
+          <Flex marginBottom={8} align="center" justify="space-between">
             <Heading size="lg" fontWeight="normal">
               Usuários
               {!isLoading && isFetching && (
@@ -103,7 +103,9 @@ function UserList() {
                     </Th>
 
                     <Th>Usuário</Th>
+
                     {isLargeDevice && <Th>Data cadastro</Th>}
+
                     <Th width={8} />
                   </Tr>
                 </Thead>

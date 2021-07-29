@@ -1795,7 +1795,7 @@ exenv@^1.2.2:
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
   integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
 
-fake-xml-http-request@^2.1.1:
+fake-xml-http-request@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/fake-xml-http-request/-/fake-xml-http-request-2.1.2.tgz#f1786720cae50bbb46273035a0173414f3e85e74"
   integrity sha512-HaFMBi7r+oEC9iJNpc3bvcW7Z7iLmM26hPDmlb0mFwyANSsOQAtJxbdWsXITKOzZUyMYK0zYCv3h5yDj9TsiXg==
@@ -2845,11 +2845,11 @@ postcss@8.2.13:
     source-map "^0.6.1"
 
 pretender@^3.4.3:
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/pretender/-/pretender-3.4.3.tgz#a3b4160516007075d29127262f3a0063d19896e9"
-  integrity sha512-AlbkBly9R8KR+R0sTCJ/ToOeEoUMtt52QVCetui5zoSmeLOU3S8oobFsyPLm1O2txR6t58qDNysqPnA1vVi8Hg==
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/pretender/-/pretender-3.4.5.tgz#3e6a06c886e5c00c41f614a924df6241bac1754a"
+  integrity sha512-MV8oR4700shk2qGuHi1A/YBVYTSLtzrppZEvyvnvVgxMShoKZUHNOYGANBu0LgcPtjSJ5RBbvcn9PDknoU7xlA==
   dependencies:
-    fake-xml-http-request "^2.1.1"
+    fake-xml-http-request "^2.1.2"
     route-recognizer "^0.3.3"
 
 process-nextick-args@~2.0.0:

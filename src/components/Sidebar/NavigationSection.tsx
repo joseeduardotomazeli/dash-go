@@ -15,7 +15,7 @@ function NavigationSection(props: NavigationSectionProps) {
         {title}
       </Text>
 
-      <Stack spacing={4} align="stretch" marginTop={8}>
+      <Stack spacing={4} marginTop={8}>
         {children}
       </Stack>
     </Box>

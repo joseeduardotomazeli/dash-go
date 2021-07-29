@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
-import { QueryClientProvider, QueryClient } from 'react-query';
+import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
 import SidebarDrawerProvider from '../contexts/SidebarDrawerProvider';
@@ -10,9 +10,11 @@ import client from '../services/queryClient';
 
 import theme from '../styles/theme';
 
-if (process.env.NODE_ENV === 'development') mirageServer();
+mirageServer();
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App(props: AppProps) {
+  const { Component, pageProps } = props;
+
   return (
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={client}>
@@ -26,4 +28,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;

@@ -11,7 +11,7 @@ import NavigationLink from './NavigationLink';
 
 function Navigation() {
   return (
-    <Stack spacing={12} align="flex-start">
+    <Stack spacing={12}>
       <NavigationSection title="GERAL">
         <NavigationLink icon={RiDashboardLine} href="/dashboard">
           Dashboard
